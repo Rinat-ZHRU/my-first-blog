@@ -9,6 +9,8 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    photo = models.ImageField(upload_to='photo', blank=True, null=True)
+    link_instagram = models.URLField(blank=True)
 
     def publish(self):
         self.published_date = timezone.now()
